@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Quick script to rebuild postgres functions
+
+if [ $# -gt 1 ]
+then
+    echo "Usage: run"
+    exit 1
+fi
+
+mi_Model.py
+knit

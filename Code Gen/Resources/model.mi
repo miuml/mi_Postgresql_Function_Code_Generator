@@ -1,0 +1,51 @@
+-- Model
+
+# Subset of miUML metamodel populated with the metamodel itself
+
+domain: miUML Metamodel, alias=meta
+
+subsystem: Domain, alias=dom
+    range = 1-19
+
+class: Domain
+    a: Name, id=1, type=Name
+    a: Alias, id=2, type=Short Name
+
+class: Subsystem
+    a: Name, id=1, type=Name
+    a: Domain, id=1 2, type=Name, ref=R1
+    a: Alias, id=2, type=Short Name
+
+class: Domain Build Spec
+    a: Name, id=1, type=Name, default=singleton
+    a: Domain name is default subsys name, type=boolean
+    a: Default subsys name, type=Name
+    a: Default subsys range, type=Posint
+    a: Default ID name, type=Name
+    a: Default ID type, type=Name
+
+subsystem: Class, alias=class
+    range = 20-49
+
+class: Class
+    a: Name, id=1, type=Name
+    a: Domain, id=1 2 3 4, type=Name, ref=R14
+    a: Cnum, id=3, type=Nominal 
+    a: Alias, id=4, type=Short Name
+==
+
+
+-- Types
+
+# <app type>:<plpgsql base type>
+
+Compound Name: text
+Nominal: integer
+Name: text
+Short Name: text
+Posint: integer
+Text: text
+Description: text
+Set: text
+Boolean: boolean
+==
